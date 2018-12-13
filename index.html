@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Sabrina Fernández Zambrano">
+    <title>Mi CV</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,700i" rel="stylesheet">
+</head>
+<body>
+    <!-- Portada: donde pondremos una imagen de foto con texto (deberá ocupar el viewport de la pantalla} -->
+    <header>
+        <h1>Curriculum Vitae</h1>
+        <p>Sabrina Fernández Zambrano</p>
+        <nav class="navigator">
+            <ul>
+                <li><a href="#quien-soy">¿Quién soy?</a></li>
+                <li><a href="#estudios">Estudios</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <!-- Quien soy: donde se mostrará información de interés y una foto vuestra. -->
+        <section id="quien-soy">
+            <header>
+                <h2>¿Quién soy?</h2>
+            </header>
+            <div class="content-wrapper">
+                <img src="./assets/personal_pic.jpg" alt="personal_picture_sabrina_fernandez_zambrano">
+                <p>Nombre: Sabrina Fernández Zambrano</p>
+                <p>Residencia: Madrid, España</p>
+                <p>Fecha de Nacimiento: 03/09/1993</p>
+            </div>
+        </section>
+
+        <!-- Estudios: sección donde aparecerán nuestros diferentes estudios o cursos realizados. -->
+        <section id="estudios">
+            <header>
+                <h2>Estudios</h2>
+            </header>
+            <section class="content-wrapper">
+                <div class="item">
+                    <p>2018 - Actualmente</p>
+                    <p>Master Full-Stack Desarrollo Web</p>
+                    <p>KeepCoding</p>
+                </div>
+                <div class="item">
+                    <p>2011-2018</p>
+                    <p>Grado en Ingenieria Informatica</p>
+                    <p>Universidad Politecnica de Madrid</p>
+                </div>
+                <div class="item">
+                    <p>2009 - 2011</p>
+                    <p>Titulo de Bachillerato</p>
+                    <p>IES Carmen Conde</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia: donde se contará la experiencia laboral con la que contamos. -->
+        <section id="experiencia">
+            <header>
+                <h2>Experiencia</h2>
+            </header>
+            <div class="content-wrapper">
+                <div class="item">
+                    <p>01/2018 - Actualmente</p>
+                    <p>Desarrolladora Front-end</p>
+                    <p>Amaris</p>
+                    <div class="content-wrapper">
+                        <ul>
+                            <li>Responsable de nuevos desarrollos utilizando tecnologías como Backbone, Marionette, CSS, HTML, Jenkins,
+                                Javascript,
+                                jQuery, Dust, Stylus, Git, Java</li>
+                            <li>Testing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <p>01/2017 - 11/2017</p>
+                    <p>Becaria en Desarrollo Front-end</p>
+                    <p>Bridge For Billions</p>
+                    <div class="content-wrapper">
+                        <ul>
+                            <li>Responsable de tareas de implementación de su aplicación web usando tecnologías como HTML5, CSS3, SASS,
+                                AngularJS,
+                                Javascript, Jade, Jquery, Coffeescript, Django, Python</li>
+                            <li>Mantenimiento de su aplicación</li>
+                            <li>Testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre mí: Sección donde mostraremos algunos de nuestros intereses o aficiones con un pequeño video (máximo 10 Mb). -->
+        <section id="sobre-mi">
+            <header>
+                <h2>Sobre Mí</h2>
+                <div class="item">
+                    <header>
+                        <h3>Intereses</h3>
+                    </header>
+                    <div class="content-wrapper">
+                        <video controls>
+                            <source src="./assets/interests.mp4" type="video/mp4"></source>
+                        </video>
+                    </div>
+                </div>
+            </header>
+
+        </section>
+
+        <!-- Contacto: donde se mostrará los datos de contacto-->
+        <section id="contacto">
+            <header>
+                <h2>Contacto</h2>
+            </header>
+            <div class="content-wrapper">
+                <form action="">
+                    <!-- - Un campo de nombre requerido. -->
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Insertar nombre" required>
+                
+                    <!-- - Un campo de email y validarlo correctamente. -->
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                
+                    <!-- - Un campo se selección ("como me has conocido"), que tenga varias opciones y una de ellas se "Otros"; -->
+                    <label for="conocer">¿Como me has conocido?</label>
+                    <select name="conocer" id="conocer">
+                        <option value="KeepCoding">KeepCoding</option>
+                        <option value="Linkedin">Linkedin</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Otros">Otros</option>
+                        <!-- si seleccionamos esta opción nos debe aparecer un campo dinámicamente de tipo texto para rellenar libremente. -->
+                    </select>
+                    <!-- - Un número de contacto, validando que el número es correcto -->
+                    <label for="telf">Telefono</label>
+                    <input type="tel" name="telf" id="telf">
+                
+                    <!-- - Un campo de textarea, con un máximo de 150 palabras (no caracteres). -->
+                    <textarea name="info" id="info" cols="30" rows="5"></textarea>
+                
+                    <!-- - Un botón de envío. -->
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>

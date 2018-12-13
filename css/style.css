@@ -1,0 +1,85 @@
+:root {
+    --black: #464646;
+    --gray: #eeeeee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+body > header {
+    background: url('./../assets/background.jpg');
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--black);
+}
+
+h1 {
+    font-size: 8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 3rem;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav li {
+    display: inline-block;
+    padding: 1rem;
+}
+
+nav li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+nav li a:hover {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+main {
+    margin-top: 2rem;
+}
+
+section p, li {
+    font-size: 1.5rem;
+}
+
+section header {
+    text-align: center;
+    border-bottom: 0.25rem solid var(--gray);
+}
