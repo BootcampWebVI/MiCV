@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
+    <script src="./js/index.js" type="module"></script>
 </head>
 <body>
     <!-- Portada: donde pondremos una imagen de foto con texto (deberá ocupar el viewport de la pantalla} -->
@@ -63,21 +64,26 @@
                 <h2>Studies</h2>
             </header>
             <section class="content-wrapper">
-                <div class="item">
+                <article class="item">
                     <p class="fecha">2018 - Actualmente</p>
-                    <p class="grado">Master Full-Stack Desarrollo Web</p>
-                    <p class="escuela">KeepCoding</p>
-                </div>
-                <div class="item">
-                    <p class="fecha">2011-2018</p>
-                    <p class="grado">Grado en Ingenieria Informatica</p>
-                    <p class="escuela">Universidad Politecnica de Madrid</p>
-                </div>
-                <div class="item">
-                    <p class="fecha"> 2009 - 2011</p>
-                    <p class="grado">Titulo de Bachillerato</p>
-                    <p class="escuela">IES Carmen Conde</p>
-                </div>
+                    <div class="description-wrapper">
+                        <img src="./assets/kc_logo.png" alt="kc_logo" class="logo">
+                        <div class="right-side-wrapper">
+                            <p class="grado">Master Full-Stack Desarrollo Web</p>
+                            <p class="escuela">KeepCoding</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="item">
+                    <p class="fecha">09/2011 - 01/2018</p>
+                    <div class="description-wrapper">
+                        <img src="./assets/upm_logo.jpg" alt="upm_logo" class="logo">
+                        <div class="right-side-wrapper">
+                            <p class="grado">Grado en Ingenieria Informatica</p>
+                            <p class="escuela">Universidad Politecnica de Madrid</p>
+                        </div>
+                    </div>
+                </article>
             </section>
         </section>
 
@@ -88,29 +94,41 @@
                 <h2>Work Experience</h2>
             </header>
             <div class="content-wrapper">
-                <div class="item">
+                <article class="item">
                     <p class="fecha">01/2018 - Actualmente</p>
-                    <p class="cargo">Desarrolladora Front-end</p>
-                    <p class="empresa">Amaris</p>
-                    <ul class="tareas">
-                        <li><i class="fas fa-check"></i> Responsable de nuevos desarrollos utilizando tecnologías como Backbone, Marionette, CSS, HTML, Jenkins,
-                            Javascript,
-                            jQuery, Dust, Stylus, Git, Java</li>
-                        <li><i class="fas fa-check"></i> Testing</li>
-                    </ul>
-                </div>
-                <div class="item">
+                    <div class="description-wrapper">
+                        <img src="./assets/amaris_logo.jpg" class="logo" alt="amaris_logo">
+                            <div class="right-side-wrapper">
+                                <p class="cargo">Desarrolladora Front-end</p>
+                                <p class="empresa">Amaris</p>
+                                <ul class="tareas">
+                                    <li><i class="fas fa-check"></i> Responsable de nuevos desarrollos utilizando tecnologías como Backbone,
+                                        Marionette, CSS, HTML, Jenkins,
+                                        Javascript,
+                                        jQuery, Dust, Stylus, Git, Java</li>
+                                    <li><i class="fas fa-check"></i> Testing</li>
+                                </ul>
+                            </div>
+                    </div>
+                </article>
+                <article class="item">
                     <p class="fecha">01/2017 - 11/2017</p>
-                    <p class="cargo">Becaria en Desarrollo Front-end</p>
-                    <p class="empresa">Bridge For Billions</p>
-                    <ul class="tareas">
-                        <li><i class="fas fa-check"></i> Responsable de tareas de implementación de su aplicación web usando tecnologías como HTML5, CSS3, SASS,
-                            AngularJS,
-                            Javascript, Jade, Jquery, Coffeescript, Django, Python</li>
-                        <li><i class="fas fa-check"></i> Mantenimiento de su aplicación</li>
-                        <li><i class="fas fa-check"></i> Testing</li>
-                    </ul>
-                </div>
+                    <div class="description-wrapper">
+                        <img src="./assets/bfb_logo.jpg" alt="bfb_logo" class="logo">
+                        <div class="right-side-wrapper">
+                            <p class="cargo">Becaria en Desarrollo Front-end</p>
+                            <p class="empresa">Bridge For Billions</p>
+                            <ul class="tareas">
+                                <li><i class="fas fa-check"></i> Responsable de tareas de implementación de su aplicación web usando tecnologías
+                                    como HTML5, CSS3, SASS,
+                                    AngularJS,
+                                    Javascript, Jade, Jquery, Coffeescript, Django, Python</li>
+                                <li><i class="fas fa-check"></i> Mantenimiento de su aplicación</li>
+                                <li><i class="fas fa-check"></i> Testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -152,6 +170,7 @@
                     <div class="input-wrapper">
                         <label for="conocer">¿Como me has conocido?</label>
                         <select class="custom-select" name="conocer" id="conocer">
+                            <option class="option" value="" selected></option>
                             <option class="option" value="KeepCoding">KeepCoding</option>
                             <option class="option" value="Linkedin">Linkedin</option>
                             <option class="option" value="Facebook">Facebook</option>
