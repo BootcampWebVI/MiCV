@@ -10,6 +10,7 @@
 html, body {
     height: 100%;
     min-height: 100%;
+    font-size: 16px;
 }
 
 body {
@@ -27,25 +28,34 @@ body > header {
     justify-content: center;
 }
 
+body > header  p{
+    font-size: 3rem;
+}
+
 h1, h2, h3 {
     font-weight: 700;
     color: var(--black);
 }
 
 h1 {
-    font-size: 8rem;
+    font-size: 4em;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1em;
 }
 
 p {
-    font-size: 3rem;
+    font-size: 3em;
+}
+
+label {
+    font-size: 3em;
+    font-weight: 800;
 }
 
 nav {
@@ -64,6 +74,9 @@ nav li a {
     font-weight: 600;
     font-size: 1.2rem;
     color: var(--black);
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
 }
 
 nav li a:hover {
@@ -71,15 +84,198 @@ nav li a:hover {
     font-size: 1.5rem;
 }
 
-main {
+section {
     margin-top: 2rem;
 }
 
-section p, li {
-    font-size: 1.5rem;
+section li, p {
+    font-size: 1.3rem;
 }
 
 section header {
     text-align: center;
-    border-bottom: 0.25rem solid var(--gray);
+    margin-bottom: 2rem;  
+}
+
+header p.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-left: 2rem;
+}
+
+header i {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+section, footer {
+    clear: both;
+}
+
+address {
+    text-align: center;
+    padding-top: 2rem;
+    font-style: italic;
+}
+
+
+#quien-soy .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+#quien-soy .content-wrapper > img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+#quien-soy .content-wrapper article {
+    width: 100%;
+}
+
+#quien-soy .content-wrapper article p {
+    line-height: 1.6rem;
+    padding: 0.5rem;
+}
+
+
+.content-wrapper {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.content-wrapper .item{
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem;
+}
+
+.content-wrapper p, li {
+    line-height: 1.3rem;
+    padding: 0.5rem;
+}
+
+.content-wrapper i {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.content-wrapper .fecha {
+    font-weight: 800;
+    float: right;
+}
+
+#estudios .grado, #experiencia .cargo {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+#experiencia ul {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+.content-wrapper video {
+    padding: 3rem;
+    width: 100%;
+}
+
+.content-wrapper form {
+    width: 100%;
+}
+
+.content-wrapper .input-wrapper, .button-wrapper {
+    clear: both;
+    text-align: center;
+    padding: 0.5rem;
+
+}
+
+.input-wrapper label {
+    float: left;
+    width: 40%;
+    font-size: 1.3rem;
+}
+
+.input-wrapper input, textarea, select{
+    width: 60%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--black);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.input-wrapper .custom-select {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.custom-select option {
+    color: var(--black);
+    font-size: 1.3rem;
+}
+
+.input-wrapper input[name="otros"] {
+    display: block;
+    margin-left: 40%;
+    margin-top: 0.5rem;
+}
+
+::-webkit-input-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+    
+}
+::-moz-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+}
+:-ms-input-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+}
+:-moz-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+}
+
+.content-wrapper .button-wrapper {
+    float: right;
+}
+
+.button-wrapper  input[type="submit"] {
+    width: 10rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--gray);
+    color: var(--black);
+    border: 0.2rem solid var(--black);
+    border-radius: 0.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.1s ease-in, background-color 0.1s ease-in;
+    -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background-color 0.1s ease-in;
+}
+
+.button-wrapper  input[type="submit"]:hover {
+    background-color: var(--black);
+    color: var(--gray);
 }
