@@ -26,6 +26,7 @@ body > header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 body > header  p{
@@ -92,10 +93,11 @@ nav.navigator li a:hover {
 
 .menu-icon {
     visibility: hidden;
-    
+    display: none;
 }
 
 nav#navigator-responsive {
+    display: none;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -125,12 +127,10 @@ header p.title {
     margin-left: 2rem;
 }
 
-section header > i.fas, section header > i.far {
-    display: none;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    color: var(--black);
+header h1{
+    clear:both;
 }
+
 
 section, footer {
     clear: both;
@@ -324,6 +324,10 @@ address {
         font-size: 2em;
     }
 
+    h2 {
+        font-size: 1.5em;
+    }
+
     body > header  p{
         font-size: 1.5rem;
     }
@@ -363,7 +367,7 @@ address {
         top: 0;
         left: 0;
         background-color: var(--black);
-        width: 80%;
+        width: 100%;
         height: 100vh;
         overflow: hidden;
         background-color: rgba(0,0,0,.9);
@@ -390,17 +394,12 @@ address {
 
     }
 
+    main {
+        padding: 0.5rem;
+    }
+
     section header {
-        margin-bottom: 0;
-    }
-
-    section header > i.fas, section header > i.far {
-        display: block;
-    }
-
-    section header > h2 {
-        text-align: center;
-        display: none; 
+        margin-bottom: 1rem;
     }
 
     section li, p {
@@ -422,6 +421,7 @@ address {
 
     #quien-soy .content-wrapper article {
         text-align: center;
+        margin-top: 1rem;
     }
 
     #quien-soy .content-wrapper article p {
@@ -503,6 +503,10 @@ address {
         font-size: 4em;
     }
 
+    h2 {
+        font-size: 3.5em;
+    }
+
     body > header  p{
         font-size: 2.5rem;
     }
@@ -516,6 +520,7 @@ address {
     }
 
     nav.menu-icon {
+        visibility: visible;
         display: block;
         text-align: left;
         position: fixed;
@@ -534,13 +539,15 @@ address {
         padding: 0.2rem;
     }
 
-    /* nav#navigator-responsive {
+    nav#navigator-responsive.opened {
+        visibility: visible;
+        opacity: 1;
         display: block;
         position: fixed;
         top: 0;
         left: 0;
         background-color: var(--black);
-        width: 80%;
+        width: 100%;
         height: 100vh;
         overflow: hidden;
         background-color: rgba(0,0,0,.9);
@@ -549,36 +556,30 @@ address {
         align-items: center;
     }
 
-    nav#navigator-responsive ul {
+    nav#navigator-responsive.opened ul {
         width: 100%;
     }
 
-    nav#navigator-responsive ul li{
+    nav#navigator-responsive.opened ul li{
         display: block;
         text-align: center;
         padding: 3rem;
     }
 
-    nav#navigator-responsive ul li a {
+    nav#navigator-responsive.opened ul li a {
         text-decoration: none;
         font-weight: 600;
         font-size: 3rem;
         color: var(--gray);
 
-    } */
+    }
+
+    main {
+        padding: 2rem;
+    }
 
     section header {
-        margin-bottom: 0;
-    }
-
-    section header > i.fas, section header > i.far {
-        display: block;
-        font-size: 4rem;
-    }
-
-    section header > h2 {
-        text-align: center;
-        display: none; 
+        margin-bottom: 1rem;
     }
 
     section li, p {
@@ -636,6 +637,11 @@ address {
 
     .content-wrapper video {
         padding: 1rem;
+    }
+
+    .content-wrapper i {
+        font-size: 2rem;
+        margin-right: 1rem;
     }
 
     .input-wrapper label {
