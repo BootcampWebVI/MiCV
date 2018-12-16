@@ -59,9 +59,16 @@ label {
 }
 
 nav {
-    position: absolute;
+    display: block;
+    position: fixed;
     top: 0;
-    right: 0;
+    background-color: var(--gray);
+    width: 100%;
+    z-index: 9;
+}
+
+nav ul {
+    float:right;
 }
 
 nav li {
@@ -98,9 +105,7 @@ section header {
 }
 
 header p.title {
-    position: absolute;
-    top: 0;
-    left: 0;
+    float: left;
     padding: 1rem;
     font-weight: 600;
     font-size: 1.5rem;
@@ -123,7 +128,6 @@ address {
     padding-top: 2rem;
     font-style: italic;
 }
-
 
 #quien-soy .content-wrapper {
     display: flex;
