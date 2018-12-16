@@ -592,7 +592,7 @@ address {
     }
 
     #quien-soy .content-wrapper article p {
-        line-height: 2rem;
+        line-height: 2.5rem;
     }
 
     .content-wrapper {
@@ -604,7 +604,7 @@ address {
     }
 
     .content-wrapper p, li {
-        line-height: 2rem;
+        line-height: 2.5rem;
         padding: 0.5rem;
     }
     
