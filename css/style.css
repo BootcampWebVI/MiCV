@@ -90,8 +90,17 @@ nav.navigator li a:hover {
     font-size: 1.5rem;
 }
 
-.menu-icon, #navigator-responsive {
-    display: none;
+.menu-icon {
+    visibility: hidden;
+    
+}
+
+nav#navigator-responsive {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    -moz-transition: visibility 0s, opacity 0.5s linear;
 }
 
 section {
@@ -328,6 +337,7 @@ address {
     }
 
     nav.menu-icon {
+        visibility: visible;
         display: block;
         text-align: left;
         position: fixed;
@@ -346,8 +356,9 @@ address {
         padding: 0.2rem;
     }
 
-    /* nav#navigator-responsive {
-        display: block;
+    nav#navigator-responsive.opened {
+        visibility: visible;
+        opacity: 1;
         position: fixed;
         top: 0;
         left: 0;
@@ -361,23 +372,23 @@ address {
         align-items: center;
     }
 
-    nav#navigator-responsive ul {
+    nav#navigator-responsive.opened  ul {
         width: 100%;
     }
 
-    nav#navigator-responsive ul li{
+    nav#navigator-responsive.opened  ul li{
         display: block;
         text-align: center;
         padding: 1.5rem;
     }
 
-    nav#navigator-responsive ul li a {
+    nav#navigator-responsive.opened  ul li a {
         text-decoration: none;
         font-weight: 600;
         font-size: 1.2rem;
         color: var(--gray);
 
-    } */
+    }
 
     section header {
         margin-bottom: 0;
