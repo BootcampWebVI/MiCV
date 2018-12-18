@@ -400,7 +400,8 @@ address {
         min-height: 100%;
         display: flex;
         align-items: center;
-        /* z-index: 1; */
+        z-index: 1;
+        animation: menuResponsive 0.2s;
     }
 
     nav#navigator-responsive.opened  ul {
@@ -528,6 +529,13 @@ address {
         font-size: 0.8rem;
     }
 
+    @keyframes menuResponsive {
+        0% { opacity: 0 }
+        25% {opacity: 0.25}
+        50% {opacity: 0.5}
+        100% { opacity: 1}
+    }
+
 }
 
 /*--------------tablets-----------*/
@@ -592,6 +600,7 @@ address {
         display: flex;
         align-items: center;
         z-index: 1;
+        animation: menuResponsive 0.2s;
     }
 
     nav#navigator-responsive.opened ul {
@@ -721,6 +730,13 @@ address {
 
     address {
         font-size: 1.5rem;
+    }
+
+    @keyframes menuResponsive {
+        0% { opacity: 0 }
+        25% {opacity: 0.25}
+        50% {opacity: 0.5}
+        100% { opacity: 1}
     }
 
 }
