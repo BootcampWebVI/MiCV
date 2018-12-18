@@ -65,6 +65,7 @@ nav.navigator{
     top: 0;
     background-color: var(--gray);
     width: 100%;
+    z-index: 1;
 }
 
 nav.navigator ul {
@@ -99,7 +100,6 @@ nav.navigator li a:hover {
 nav#navigator-responsive {
     display: none;
     visibility: hidden;
-    opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     -webkit-transition: visibility 0s, opacity 0.5s linear;
     -moz-transition: visibility 0s, opacity 0.5s linear;
@@ -370,6 +370,7 @@ address {
         top: 0;
         background-color: var(--gray);
         width: 100%;
+        z-index: 1;
     }
 
     nav.menu-icon > a {
@@ -384,7 +385,6 @@ address {
 
     nav#navigator-responsive.opened {
         visibility: visible;
-        opacity: 1;
         position: fixed;
         top: 0;
         left: 0;
@@ -396,6 +396,7 @@ address {
         min-height: 100%;
         display: flex;
         align-items: center;
+        z-index: 1;
     }
 
     nav#navigator-responsive.opened  ul {
@@ -559,6 +560,7 @@ address {
         top: 0;
         background-color: var(--gray);
         width: 100%;
+        z-index: 1;
     }
 
     nav.menu-icon > a {
@@ -573,7 +575,6 @@ address {
 
     nav#navigator-responsive.opened {
         visibility: visible;
-        opacity: 1;
         display: block;
         position: fixed;
         top: 0;
@@ -586,6 +587,7 @@ address {
         min-height: 100%;
         display: flex;
         align-items: center;
+        z-index: 1;
     }
 
     nav#navigator-responsive.opened ul {
