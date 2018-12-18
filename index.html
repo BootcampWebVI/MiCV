@@ -162,7 +162,7 @@
                 <h2>Contact</h2>
             </header>
             <div class="content-wrapper">
-                <form action="">
+                <form action="" id="form">
                     <!-- - Un campo de nombre requerido. -->
                     <div class="input-wrapper">
                         <label for="nombre">Nombre</label>
@@ -196,17 +196,21 @@
 
                     <!-- - Un campo de textarea, con un máximo de 150 palabras (no caracteres). -->
                     <div class="input-wrapper">
-                        <label for="telf">Información adicional</label>
+                        <label for="info">Información adicional</label>
                         <textarea name="info" id="info" cols="30" rows="5"></textarea>
                     </div>
 
                     <!-- - Un botón de envío. -->
                     <div class="button-wrapper">
-                        <input type="submit" value="submit"></button>
+                        <!-- disabled -->
+                        <input type="submit" value="submit" ></button>
                     </div>
                 </form>
             </div>
-            
+            <div class="confirmation-wrapper">
+                <i class="far fa-check-circle"></i>
+                <p>Tu petición ha sido enviada correctamente!</p>
+            </div>
         </section>
     </main>
     <footer>
