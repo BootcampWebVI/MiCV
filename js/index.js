@@ -3,6 +3,7 @@ import { validateForm } from './form.js';
 
 var menu = document.querySelector('.menu-icon');
 var inputs =  document.querySelectorAll('#form input');
+var textarea = document.querySelector('#form textarea');
 var options = document.querySelectorAll('#form select option')
 
 menu.addEventListener('click', openMenu.bind(this));
@@ -14,5 +15,7 @@ inputs.forEach((input) => {
 options.forEach((option) => {
     option.addEventListener('click', validateForm.bind(this));
 });
+
+textarea.addEventListener('keyup', validateForm.bind(this));
 
 

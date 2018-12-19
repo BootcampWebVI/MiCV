@@ -310,6 +310,12 @@ address {
     transition: color 0.1s ease-in, background-color 0.1s ease-in;
     -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-in;
     -moz-transition: color 0.1s ease-in, background-color 0.1s ease-in;
+    opacity: 1;
+}
+
+
+.button-wrapper  input[type="submit"]:disabled {
+    opacity: 0.3;
 }
 
 .button-wrapper  input[type="submit"]:disabled:hover {
@@ -321,6 +327,17 @@ address {
 .button-wrapper  input[type="submit"]:hover {
     background-color: var(--black);
     color: var(--gray);
+}
+
+#counter {
+    width: 60%;
+    text-align: right;
+    
+}
+
+#counter p {
+    font-size: 1rem;
+    padding: 0;
 }
 
 .confirmation-wrapper {
@@ -509,6 +526,10 @@ address {
     .button-wrapper input[type="submit"] {
         width: 100%;
         font-size: 1rem;
+    }
+
+    #counter p {
+        font-size: 0.8rem;
     }
 
     .confirmation-wrapper i {
@@ -712,6 +733,10 @@ address {
     .button-wrapper input[type="submit"] {
         width: 100%;
         font-size: 2rem;
+    }
+
+    #counter p {
+        font-size: 1.5rem;
     }
 
     .confirmation-wrapper i {

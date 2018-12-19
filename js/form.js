@@ -6,8 +6,11 @@ let email = '';
 let conocer = '';
 let otros = '';
 let phone = '';
+let extraInfo = '';
 
 let otrosText = '';
+
+let textareaValidate = false;
 
 let submitButton = document.querySelector('input[type="submit"]');
 submitButton.addEventListener('click', submitForm.bind(this));
@@ -19,6 +22,19 @@ export function validateForm(){
     conocer = document.querySelector('#conocer').value;
     otros = document.querySelector('#otros');
     phone = document.querySelector('#telf').value;
+    extraInfo = document.querySelector('#form textarea').value;
+
+    let wordCounter = 0;
+    if (extraInfo !== '') {
+        let counterText = document.getElementById('counter');
+        wordCounter = extraInfo.trim().split(' ').length;
+        counterText.innerHTML = `<p>Te quedan ${150 - wordCounter} palabras</p>`;
+        if (wordCounter <= 150) {
+            textareaValidate = true;
+        } else {
+            textareaValidate = false;
+        }
+    }
 
     showOtrosInput();
 
@@ -39,8 +55,14 @@ function disableButton(){
 
     if (name !== '' && email !== '' && conocer !== '' && phone !== '') {
         if ((conocer === 'Otros' && otrosText !== '') || (conocer !== 'Otros')){
-            submitButton.removeAttribute('disabled');
-        } 
+            if((extraInfo !== '' && textareaValidate) || extraInfo === ''){
+                submitButton.removeAttribute('disabled');
+            }else {
+                submitButton.setAttribute('disabled', true);
+            }
+        } else {
+            submitButton.setAttribute('disabled', true);
+        }
     } else {
         submitButton.setAttribute('disabled', true);
     }
