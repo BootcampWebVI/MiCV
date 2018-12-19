@@ -186,12 +186,12 @@
                             <option class="option"class="option" value="Otros">Otros</option>
                             <!-- si seleccionamos esta opción nos debe aparecer un campo dinámicamente de tipo texto para rellenar libremente. -->
                         </select>
-                        <input type="text" name="otros" id="Otros" placeholder="¿Donde me has conocido?">
+                        <input type="text" name="otros" id="otros" placeholder="¿Donde me has conocido?">
                     </div>                   
                     <!-- - Un número de contacto, validando que el número es correcto -->
                     <div class="input-wrapper">
                         <label for="telf">Telefono</label>
-                        <input type="tel" name="telf" id="telf" placeholder="Insertar telefono">
+                        <input type="tel" name="telf" id="telf" placeholder="Insertar telefono" pattern='[0-9]{9}' maxlength="12">
                     </div>
 
                     <!-- - Un campo de textarea, con un máximo de 150 palabras (no caracteres). -->
@@ -203,7 +203,7 @@
                     <!-- - Un botón de envío. -->
                     <div class="button-wrapper">
                         <!-- disabled -->
-                        <input type="submit" value="submit" ></button>
+                        <input type="submit" value="submit" disabled></button>
                     </div>
                 </form>
             </div>

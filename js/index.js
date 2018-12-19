@@ -1,22 +1,18 @@
 import { openMenu } from './menu.js';
-import { validateForm, submitForm } from './form.js';
-// import { smoothScroll } from './scroll.js'
+import { validateForm } from './form.js';
 
 var menu = document.querySelector('.menu-icon');
-var submitButton = document.querySelector('input[type="submit"]');
-// var links = document.querySelectorAll('#home ul li');
+var inputs =  document.querySelectorAll('#form input');
+var options = document.querySelectorAll('#form select option')
 
 menu.addEventListener('click', openMenu.bind(this));
-submitButton.addEventListener('click', submitForm.bind(this));
 
-// add smooth scroll
-// links.forEach((link) => {
-//     link.addEventListener('click', smoothScroll.bind(this));
-// });
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validateForm.bind(this));
+});
+
+options.forEach((option) => {
+    option.addEventListener('click', validateForm.bind(this));
+});
 
 
-
-// if(validateForm()){
-//     submitButton.setAttribute('disabled', false);
-//     submitButton.addEventListener('click', submitForm.bind(this));
-// }

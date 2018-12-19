@@ -1,27 +1,52 @@
 let form = document.querySelector('#contacto .content-wrapper');
 let confirmation = document.querySelector('#contacto .confirmation-wrapper');
-let name = document.querySelector('#name');
-let email = document.querySelector('#email');
-let conocer = document.querySelector('#conocer');
+
+let name = '';
+let email = '';
+let conocer = '';
 let otros = '';
-let phone = document.querySelector('#telf');
+let phone = '';
+
+let otrosText = '';
+
+let submitButton = document.querySelector('input[type="submit"]');
+submitButton.addEventListener('click', submitForm.bind(this));
 
 export function validateForm(){
-    let activeButton = false;
 
-    if(conocer.value === 'Otros'){
-        otros = document.querySelector('#otros');
-    }
+    name = document.querySelector('#nombre').value;
+    email = document.querySelector('#email').value;
+    conocer = document.querySelector('#conocer').value;
+    otros = document.querySelector('#otros');
+    phone = document.querySelector('#telf').value;
 
-    if(name !== null && email !== null && conocer !== null && phone !== null && phone !== null){
-        activeButton = true; 
-    }
+    showOtrosInput();
 
-    return activeButton;
+    disableButton();
     
 }
 
-export function submitForm(){
+function showOtrosInput(){
+    if (conocer === 'Otros') {
+        otros.style.display = 'block';
+        otrosText = otros.value;
+    } else {
+        otros.style.display = 'none';
+    }
+}
+
+function disableButton(){
+
+    if (name !== '' && email !== '' && conocer !== '' && phone !== '') {
+        if ((conocer === 'Otros' && otrosText !== '') || (conocer !== 'Otros')){
+            submitButton.removeAttribute('disabled');
+        } 
+    } else {
+        submitButton.setAttribute('disabled', true);
+    }
+}
+
+function submitForm() {
     console.log('enviando formulario...');
     setTimeout(() => {
         console.log('formulario enviado!');
