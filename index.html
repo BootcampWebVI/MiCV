@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Sabrina Fernández Zambrano">
-    <title>Sabrina's Resume</title>
+    <title>Sabrina's CV</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,700i" rel="stylesheet">
@@ -17,9 +17,9 @@
     <!-- Portada: donde pondremos una imagen de foto con texto (deberá ocupar el viewport de la pantalla} -->
     <header id="home">
         <h1>Sabrina Fernández Zambrano</h1>
-        <p>Full-Stack Web Developer</p>
+        <p>Desarrolladora Web Full-Stack</p>
         <nav class="navigator">
-            <p class="title">My Resume</p>
+            <p class="title">Mi CV</p>
             <ul>
                 <li><a href="#quien-soy">¿Quién soy?</a></li>
                 <li><a href="#estudios">Estudios</a></li>
@@ -47,21 +47,21 @@
         <!-- Quien soy: donde se mostrará información de interés y una foto vuestra. -->
         <section id="quien-soy">
             <header>
-                <h2>Who am I?</h2>
+                <h2>¿Quién soy?</h2>
             </header>
             <div class="content-wrapper">
                 <img src="./assets/personal_pic.jpg" alt="personal_picture_sabrina_fernandez_zambrano">
                 <article>
-                    <p>Hello, I'm Sabrina</p>
+                    <p>Hola, soy Sabrina</p>
                     <p>
-                        About me, I have a Bachelor Degree in Computer Engineering.
-                        During the career, I have worked with programming languages such as
-                        Java, C and SQL.
+                        Sobre mí, soy graduada en Ingeniería Informática. 
+                        Durante la carrera, he trabajado con lenguajes de programación como
+                        Java, C y SQL
                     </p>
                     <p>
-                        In addition, I have acquired experience working with languages such as HTML5, Javascript, CSS3 and
-                        with frameworks like AngularJS, React and React Native through interships and courses due to my interest on web and
-                        mobile development.
+                        También, he adquirido experiencia trabajando con lenguajes como HTML5, Javascript, CSS3 y con frameworks como AngularJS,
+                        React y React Native a través de prácticas y cursos debido a mi gran interés en el desarrollo de aplicaciones web y
+                        móviles.
                     </p>
                 </article>
                 
@@ -71,7 +71,7 @@
         <!-- Estudios: sección donde aparecerán nuestros diferentes estudios o cursos realizados. -->
         <section id="estudios">
             <header>
-                <h2>Studies</h2>
+                <h2>Estudios</h2>
             </header>
             <div class="content-wrapper">
                 <article class="item">
@@ -101,7 +101,7 @@
         <!-- Experiencia: donde se contará la experiencia laboral con la que contamos. -->
         <section id="experiencia">
             <header>
-                <h2>Work Experience</h2>
+                <h2>Experiencia</h2>
             </header>
             <div class="content-wrapper">
                 <article class="item">
@@ -145,7 +145,7 @@
         <!-- Sobre mí: Sección donde mostraremos algunos de nuestros intereses o aficiones con un pequeño video (máximo 10 Mb). -->
         <section id="sobre-mi">
             <header>
-                <h2>About me</h2>
+                <h2>Sobre Mí</h2>
                 <div class="content-wrapper">
                     <video controls>
                         <source src="./assets/interests.mp4" type="video/mp4"></source>
@@ -159,7 +159,7 @@
         <!-- Contacto: donde se mostrará los datos de contacto-->
         <section id="contacto">
             <header>
-                <h2>Contact</h2>
+                <h2>Contacto</h2>
             </header>
             <div class="content-wrapper">
                 <form action="" id="form">
@@ -191,7 +191,7 @@
                     <!-- - Un número de contacto, validando que el número es correcto -->
                     <div class="input-wrapper">
                         <label for="telf">Telefono</label>
-                        <input type="tel" name="telf" id="telf" placeholder="Insertar telefono" pattern='[0-9]{9}' maxlength="12">
+                        <input type="tel" name="telf" id="telf" placeholder="Insertar telefono" pattern='[0-9]{9}' minlength="9" maxlength="12">
                     </div>
 
                     <!-- - Un campo de textarea, con un máximo de 150 palabras (no caracteres). -->
@@ -203,7 +203,6 @@
 
                     <!-- - Un botón de envío. -->
                     <div class="button-wrapper">
-                        <!-- disabled -->
                         <input type="submit" value="submit" disabled></button>
                     </div>
                 </form>
