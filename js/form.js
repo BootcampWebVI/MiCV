@@ -20,11 +20,7 @@ let submitButton = document.querySelector('input[type="submit"]');
 
 function validateForm(){
 
-    name = document.querySelector('#nombre');
-    email = document.querySelector('#email');
     conocer = document.querySelector('#conocer');
-    otros = document.querySelector('#otros');
-    phone = document.querySelector('#telf');
     extraInfo = document.querySelector('#form textarea');
 
     if(nameValidate && emailValidate && phoneValidate){

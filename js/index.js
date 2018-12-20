@@ -1,8 +1,12 @@
 import { openMenu } from './menu.js';
 import { validateName, validateEmail, validatePhone, validateConocer, validateTextarea} from './form.js';
+import { smoothScroll } from './scroll.js'
 
 // menu
 var menu = document.querySelector('.menu-icon');
+
+// links
+var links = document.querySelectorAll('header .navigator ul li a')
 
 // inputs
 var inputName =  document.querySelector('#nombre');
@@ -19,6 +23,10 @@ var options = document.querySelector('#form select');
 
 menu.addEventListener('click', openMenu.bind(this));
 
+links.forEach((link) => {
+    link.addEventListener('click', smoothScroll.bind(this));
+});
+
 inputName.addEventListener('change', validateName.bind(this));
 inputEmail.addEventListener('change', validateEmail.bind(this));
 inputPhone.addEventListener('change', validatePhone.bind(this));
@@ -26,5 +34,4 @@ inputPhone.addEventListener('change', validatePhone.bind(this));
 options.addEventListener('click', validateConocer.bind(this));
 
 textarea.addEventListener('keyup', validateTextarea.bind(this));
-
 
