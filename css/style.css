@@ -493,6 +493,8 @@ address {
 
     .content-wrapper .fecha {
         float: none;
+        font-size: 1rem;
+        margin-left: 26%;
     }
 
     .content-wrapper .logo {
@@ -695,6 +697,8 @@ address {
 
     .content-wrapper .fecha {
         float: none;
+        font-size: 2rem;
+        margin-left: 18%;
     }
 
     .content-wrapper .logo {
