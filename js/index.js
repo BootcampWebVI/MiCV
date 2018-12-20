@@ -1,19 +1,30 @@
 import { openMenu } from './menu.js';
-import { validateForm } from './form.js';
+import { validateName, validateEmail, validatePhone, validateConocer, validateTextarea} from './form.js';
 
+// menu
 var menu = document.querySelector('.menu-icon');
-var inputs =  document.querySelectorAll('#form input');
+
+// inputs
+var inputName =  document.querySelector('#nombre');
+var inputEmail = document.querySelector('#email');
+var inputPhone = document.querySelector('#telf');
+
+// textarea
 var textarea = document.querySelector('#form textarea');
-var options = document.querySelector('#form select')
+
+// select
+var options = document.querySelector('#form select');
+
+//------ events ------
 
 menu.addEventListener('click', openMenu.bind(this));
 
-inputs.forEach((input) => {
-    input.addEventListener('keyup', validateForm.bind(this));
-});
+inputName.addEventListener('change', validateName.bind(this));
+inputEmail.addEventListener('change', validateEmail.bind(this));
+inputPhone.addEventListener('change', validatePhone.bind(this));
 
-options.addEventListener('click', validateForm.bind(this));
+options.addEventListener('click', validateConocer.bind(this));
 
-textarea.addEventListener('keyup', validateForm.bind(this));
+textarea.addEventListener('keyup', validateTextarea.bind(this));
 
 

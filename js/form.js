@@ -10,15 +10,15 @@ let extraInfo = '';
 
 let otrosText = '';
 
-let inputValidate = false;
+var nameValidate = false;
+let emailValidate = false;
+let phoneValidate = false
+let otrosValidate = false;
 let textareaValidate = false;
 
 let submitButton = document.querySelector('input[type="submit"]');
-submitButton.addEventListener('click', submitForm.bind(this));
 
-export function validateForm(e){
-
-    console.log(e)
+function validateForm(){
 
     name = document.querySelector('#nombre');
     email = document.querySelector('#email');
@@ -27,15 +27,73 @@ export function validateForm(e){
     phone = document.querySelector('#telf');
     extraInfo = document.querySelector('#form textarea');
 
-    countTextarea();
-
-    showOtrosInput();
-
-    disableButton();
+    if(nameValidate && emailValidate && phoneValidate){
+        if((conocer.value === 'Otros' && otrosValidate) || conocer.value !== 'Otros'){
+            if((extraInfo.value !== '' && textareaValidate) || extraInfo.value === ''){
+                activeButton();
+            } else {
+                disableButton();
+            }
+        } else {
+            disableButton();
+        }
+    } else {
+        disableButton();
+    }
     
 }
 
-function countTextarea(){
+export function validateName(e){
+    name = document.querySelector('#nombre');
+
+    if(name.value !== '' && e.target.validity.valid){
+        nameValidate = true;
+        validateForm();
+    } else {
+        validateName = false;
+    }
+}
+
+export function validateEmail(e){
+    email = document.querySelector('#email');
+
+    if (email.value !== '' && e.target.validity.valid){
+        emailValidate = true;
+        validateForm();
+    } else {
+        validateEmail = false;
+    }
+}
+
+export function validateConocer(e){
+    conocer = document.querySelector('#conocer');
+    otros = document.querySelector('#otros');
+
+    if (conocer.value !== ' ' ){
+        if (conocer.value === 'Otros') {
+            otros.style.display = 'block';
+            otros.addEventListener('keyup', validateOtros.bind(this));
+        } else {
+            otros.style.display = 'none';
+        }
+
+        validateForm();
+    }
+
+}
+
+export function validatePhone(e){
+    phone = document.querySelector('#telf');
+
+    if (phone.value !== '' && e.target.validity.valid){
+        phoneValidate = true;
+        validateForm();
+    } else{
+        phoneValidate = false;
+    }
+}
+
+export function validateTextarea(){
     let wordCounter = 0;
     let counterText = document.getElementById('counter');
     if (extraInfo.value !== '') {
@@ -43,39 +101,35 @@ function countTextarea(){
         counterText.innerHTML = `<p>Te quedan ${150 - wordCounter} palabras</p>`;
         if (wordCounter <= 150) {
             textareaValidate = true;
+            validateForm();
         } else {
             textareaValidate = false;
         }
     } else {
         wordCounter = 0;
         counterText.innerHTML = `<p>Te quedan 150 palabras</p>`;
+        validateForm();
     }
 }
 
-function showOtrosInput(){
-    if (conocer.value === 'Otros') {
-        otros.style.display = 'block';
-        otrosText = otros.value;
+function validateOtros(){
+    otrosText = otros.value;
+    if (otrosText !== '') {
+        otrosValidate = true;
     } else {
-        otros.style.display = 'none';
+        otrosValidate = false;
     }
+    
+    validateForm();
 }
 
 function disableButton(){
+    submitButton.setAttribute('disabled', true);
+}
 
-    if (name.value !== '' && email.value !== '' && conocer.value !== '' && phone.value !== '') {
-        if ((conocer.value === 'Otros' && otrosText !== '') || (conocer.value !== 'Otros')){
-            if ((extraInfo.value !== '' && textareaValidate) || extraInfo.value === ''){
-                submitButton.removeAttribute('disabled');
-            }else {
-                submitButton.setAttribute('disabled', true);
-            }
-        } else {
-            submitButton.setAttribute('disabled', true);
-        }
-    } else {
-        submitButton.setAttribute('disabled', true);
-    }
+function activeButton(){
+    submitButton.removeAttribute('disabled');
+    submitButton.addEventListener('click', submitForm.bind(this));
 }
 
 function submitForm() {
@@ -84,5 +138,5 @@ function submitForm() {
         console.log('formulario enviado!');
         form.style.display = 'none';
         confirmation.style.display = 'block';
-    }, 2000);
+    }, 3000);
 }
