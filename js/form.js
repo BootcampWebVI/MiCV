@@ -10,31 +10,24 @@ let extraInfo = '';
 
 let otrosText = '';
 
+let inputValidate = false;
 let textareaValidate = false;
 
 let submitButton = document.querySelector('input[type="submit"]');
 submitButton.addEventListener('click', submitForm.bind(this));
 
-export function validateForm(){
+export function validateForm(e){
 
-    name = document.querySelector('#nombre').value;
-    email = document.querySelector('#email').value;
-    conocer = document.querySelector('#conocer').value;
+    console.log(e)
+
+    name = document.querySelector('#nombre');
+    email = document.querySelector('#email');
+    conocer = document.querySelector('#conocer');
     otros = document.querySelector('#otros');
-    phone = document.querySelector('#telf').value;
-    extraInfo = document.querySelector('#form textarea').value;
+    phone = document.querySelector('#telf');
+    extraInfo = document.querySelector('#form textarea');
 
-    let wordCounter = 0;
-    if (extraInfo !== '') {
-        let counterText = document.getElementById('counter');
-        wordCounter = extraInfo.trim().split(' ').length;
-        counterText.innerHTML = `<p>Te quedan ${150 - wordCounter} palabras</p>`;
-        if (wordCounter <= 150) {
-            textareaValidate = true;
-        } else {
-            textareaValidate = false;
-        }
-    }
+    countTextarea();
 
     showOtrosInput();
 
@@ -42,8 +35,25 @@ export function validateForm(){
     
 }
 
+function countTextarea(){
+    let wordCounter = 0;
+    let counterText = document.getElementById('counter');
+    if (extraInfo.value !== '') {
+        wordCounter = extraInfo.value.trim().split(' ').length;
+        counterText.innerHTML = `<p>Te quedan ${150 - wordCounter} palabras</p>`;
+        if (wordCounter <= 150) {
+            textareaValidate = true;
+        } else {
+            textareaValidate = false;
+        }
+    } else {
+        wordCounter = 0;
+        counterText.innerHTML = `<p>Te quedan 150 palabras</p>`;
+    }
+}
+
 function showOtrosInput(){
-    if (conocer === 'Otros') {
+    if (conocer.value === 'Otros') {
         otros.style.display = 'block';
         otrosText = otros.value;
     } else {
@@ -53,9 +63,9 @@ function showOtrosInput(){
 
 function disableButton(){
 
-    if (name !== '' && email !== '' && conocer !== '' && phone !== '') {
-        if ((conocer === 'Otros' && otrosText !== '') || (conocer !== 'Otros')){
-            if((extraInfo !== '' && textareaValidate) || extraInfo === ''){
+    if (name.value !== '' && email.value !== '' && conocer.value !== '' && phone.value !== '') {
+        if ((conocer.value === 'Otros' && otrosText !== '') || (conocer.value !== 'Otros')){
+            if ((extraInfo.value !== '' && textareaValidate) || extraInfo.value === ''){
                 submitButton.removeAttribute('disabled');
             }else {
                 submitButton.setAttribute('disabled', true);
