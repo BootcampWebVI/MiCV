@@ -8,11 +8,11 @@ function getSectionPosition() {
     let sectionSobreMi = document.getElementById('sobre-mi');
     let sectionContacto = document.getElementById('contacto');
 
-    sectionsPosition['#quien-soy'] = sectionQuienSoy.offsetTop;
-    sectionsPosition['#estudios'] = sectionEstudios.offsetTop
-    sectionsPosition['#experiencia'] = sectionExperiencia.offsetTop;
-    sectionsPosition['#sobre-mi'] = sectionSobreMi.offsetTop;
-    sectionsPosition['#contacto'] = sectionContacto.offsetTop;
+    sectionsPosition['#quien-soy'] = cumulativeOffset(sectionQuienSoy);
+    sectionsPosition['#estudios'] =  cumulativeOffset(sectionEstudios)
+    sectionsPosition['#experiencia'] = cumulativeOffset(sectionExperiencia);
+    sectionsPosition['#sobre-mi'] = cumulativeOffset(sectionSobreMi);
+    sectionsPosition['#contacto'] =  cumulativeOffset(sectionContacto);
 
     console.dir(sectionsPosition)
 }
@@ -47,7 +47,6 @@ export function scrollSpy() {
 
     console.log(currentScrollPosition)
 
-
     if (currentScrollPosition >= sectionsPosition['#quien-soy'] && currentScrollPosition < sectionsPosition['#estudios']) {
         target = 'quien-soy';
     }
@@ -70,7 +69,8 @@ export function scrollSpy() {
 
     removeActive();
 
-    addActive(target);
-
+    if(target !== ''){
+        addActive(target);
+    }
 
 }
