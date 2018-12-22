@@ -1,6 +1,6 @@
 import { openMenu } from './menu.js';
 import { validateName, validateEmail, validatePhone, validateConocer, validateTextarea} from './form.js';
-import { smoothScroll } from './scroll.js'
+import { scrollSpy } from './scrollSpy.js'
 
 // menu
 var menu = document.querySelector('.menu-icon');
@@ -23,10 +23,6 @@ var options = document.querySelector('#form select');
 
 menu.addEventListener('click', openMenu.bind(this));
 
-links.forEach((link) => {
-    link.addEventListener('click', smoothScroll.bind(this));
-});
-
 inputName.addEventListener('change', validateName.bind(this));
 inputEmail.addEventListener('change', validateEmail.bind(this));
 inputPhone.addEventListener('change', validatePhone.bind(this));
@@ -35,3 +31,6 @@ options.addEventListener('click', validateConocer.bind(this));
 
 textarea.addEventListener('keyup', validateTextarea.bind(this));
 
+// ------ scroll-spy --------
+
+window.addEventListener('scroll', scrollSpy.bind(this));

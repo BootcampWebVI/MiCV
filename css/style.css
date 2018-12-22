@@ -7,9 +7,9 @@
     box-sizing: border-box;
 }
 
-/* html {
+html {
     scroll-behavior: smooth;
-} */
+}
 
 html, body {
     height: 100%;
@@ -92,6 +92,11 @@ nav.navigator li a {
 }
 
 nav.navigator li a:hover {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+nav.navigator li a.active {
     font-weight: 700;
     font-size: 1.5rem;
 }

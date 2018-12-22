@@ -19,3 +19,5 @@ function closeMenu(e) {
     menuIcon.style.display = 'block';
     menuResponsive.classList.toggle('opened');
 }
+
+
