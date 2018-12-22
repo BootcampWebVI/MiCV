@@ -145,9 +145,12 @@ section, footer {
     clear: both;
 }
 
+footer {
+    margin-top: 20rem;
+}
+
 address {
     text-align: center;
-    padding-top: 2rem;
     font-style: italic;
 }
 
