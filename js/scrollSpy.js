@@ -14,7 +14,6 @@ function getSectionPosition() {
     sectionsPosition['#sobre-mi'] = cumulativeOffset(sectionSobreMi);
     sectionsPosition['#contacto'] =  cumulativeOffset(sectionContacto);
 
-    console.dir(sectionsPosition)
 }
 
 function addActive(target){
@@ -44,8 +43,6 @@ export function scrollSpy() {
 
     let currentScrollPosition = window.pageYOffset;
     let target = '';
-
-    console.log(currentScrollPosition)
 
     if (currentScrollPosition >= sectionsPosition['#quien-soy'] && currentScrollPosition < sectionsPosition['#estudios']) {
         target = 'quien-soy';
