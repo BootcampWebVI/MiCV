@@ -7,9 +7,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     height: 100%;
     min-height: 100%;
+    font-size: 16px;
 }
 
 body {
@@ -19,12 +24,17 @@ body {
 body > header {
     background: url('./../assets/background.jpg');
     background-size: cover;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+body > header  p{
+    font-size: 3rem;
 }
 
 h1, h2, h3 {
@@ -33,53 +43,739 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 8rem;
+    font-size: 4em;
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1em;
 }
 
 p {
-    font-size: 3rem;
+    font-size: 3em;
 }
 
-nav {
-    position: absolute;
+label {
+    font-size: 3em;
+    font-weight: 800;
+}
+
+nav.navigator{
+    display: block;
+    position: fixed;
     top: 0;
-    right: 0;
+    background-color: var(--gray);
+    width: 100%;
+    z-index: 1;
 }
 
-nav li {
+nav.navigator ul {
+    float:right;
+}
+
+nav.navigator li {
     display: inline-block;
     padding: 1rem;
 }
 
-nav li a {
+nav.navigator li a {
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2rem;
     color: var(--black);
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
 }
 
-nav li a:hover {
+nav.navigator li a:hover {
     font-weight: 700;
     font-size: 1.5rem;
 }
 
-main {
+nav.navigator li a.active {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.menu-icon {
+    visibility: hidden;
+    display: none;
+}
+
+nav#navigator-responsive {
+    display: none;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s linear;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    -moz-transition: visibility 0s, opacity 0.5s linear;
+}
+
+section {
     margin-top: 2rem;
 }
 
-section p, li {
-    font-size: 1.5rem;
+section li, p {
+    font-size: 1.3rem;
 }
 
 section header {
     text-align: center;
-    border-bottom: 0.25rem solid var(--gray);
+    margin-bottom: 2rem;  
 }
+
+header p.title {
+    float: left;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-left: 2rem;
+}
+
+header h1{
+    clear:both;
+}
+
+
+section, footer {
+    clear: both;
+}
+
+footer {
+    margin-top: 20rem;
+}
+
+address {
+    text-align: center;
+    font-style: italic;
+}
+
+#quien-soy .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+#quien-soy .content-wrapper > img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+#quien-soy .content-wrapper article {
+    width: 100%;
+}
+
+#quien-soy .content-wrapper article p {
+    line-height: 1.6rem;
+    padding: 0.5rem;
+}
+
+
+.content-wrapper {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.content-wrapper .item{
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem;
+}
+
+.content-wrapper p, li {
+    line-height: 1.3rem;
+    padding: 0.5rem;
+}
+
+.content-wrapper i {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.content-wrapper .description-wrapper {
+    display: flex;
+}
+.description-wrapper .right-side-wrapper {
+    width: 80%;
+}
+
+
+.content-wrapper .fecha {
+    font-weight: 800;
+    float: right;
+}
+
+#estudios .grado, #experiencia .cargo {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.content-wrapper .logo {
+    border: 0.1rem solid var(--black);
+    border-radius: 50%;
+    width: 10%;
+    height: 10%;
+    margin-right: 1.5rem;
+}
+
+#experiencia ul {
+    margin-left: 1rem;
+}
+
+.content-wrapper video {
+    padding: 3rem;
+    width: 100%;
+}
+
+.content-wrapper form {
+    width: 100%;
+}
+
+.content-wrapper .input-wrapper, .button-wrapper {
+    clear: both;
+    text-align: center;
+    padding: 0.5rem;
+
+}
+
+.input-wrapper label {
+    float: left;
+    width: 40%;
+    font-size: 1.3rem;
+}
+
+.input-wrapper input, textarea, select{
+    width: 60%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid var(--black);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.input-wrapper .custom-select {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.custom-select option {
+    color: var(--black);
+    font-size: 1.3rem;
+}
+
+.input-wrapper input[name="otros"] {
+    display: block;
+    margin-left: 40%;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+::-webkit-input-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+    
+}
+::-moz-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+}
+:-ms-input-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+}
+:-moz-placeholder {
+    color: var(--black);
+    font-family: 'Raleway', sans-serif;
+}
+
+.content-wrapper .button-wrapper {
+    float: right;
+}
+
+.button-wrapper  input[type="submit"] {
+    width: 10rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--gray);
+    color: var(--black);
+    border: 0.2rem solid var(--black);
+    border-radius: 0.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.1s ease-in, background-color 0.1s ease-in;
+    -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background-color 0.1s ease-in;
+    opacity: 1;
+}
+
+
+.button-wrapper  input[type="submit"]:disabled {
+    opacity: 0.3;
+}
+
+.button-wrapper  input[type="submit"]:disabled:hover {
+    background-color: var(--gray);
+    color: var(--black);
+    cursor: auto;
+}
+
+.button-wrapper  input[type="submit"]:hover {
+    background-color: var(--black);
+    color: var(--gray);
+}
+
+#counter {
+    width: 60%;
+    text-align: right;
+    
+}
+
+#counter p {
+    font-size: 1rem;
+    padding: 0;
+}
+
+.confirmation-wrapper {
+    display: none;
+    clear: both;
+    text-align: center;
+}
+
+.confirmation-wrapper i {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.confirmation-wrapper p {
+    font-size: 1.5rem;
+}
+
+/* Media queries */
+
+/*--------------mobile phones-----------*/
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 768px){
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    body > header  p{
+        font-size: 1.5rem;
+    }
+
+    header p.title, nav {
+        display: none;
+    }
+
+    nav.navigator {
+        display: none;
+    }
+
+    nav.menu-icon {
+        visibility: visible;
+        display: block;
+        text-align: left;
+        position: fixed;
+        top: 0;
+        background-color: var(--gray);
+        width: 100%;
+        z-index: 1;
+    }
+
+    nav.menu-icon > a {
+        margin-left: 0.5rem;
+    }
+
+    nav.menu-icon a > i {
+        font-size: 2rem;
+        color: var(--black);
+        padding: 0.2rem;
+    }
+
+    nav#navigator-responsive.opened {
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--black);
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0,0,0,.9);
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        animation: menuResponsive 0.2s;
+    }
+
+    nav#navigator-responsive.opened  ul {
+        width: 100%;
+    }
+
+    nav#navigator-responsive.opened  ul li{
+        display: block;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    nav#navigator-responsive.opened  ul li a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--gray);
+
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    section header {
+        margin-bottom: 1rem;
+    }
+
+    section li, p {
+        font-size: 1rem;
+    }       
+
+    #quien-soy .content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #quien-soy .content-wrapper > img {
+        margin-right: 0;
+    }
+
+    #quien-soy .content-wrapper article {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    #quien-soy .content-wrapper article p {
+        line-height: 1.3rem;
+    }
+
+    .content-wrapper {
+        width: 100%;
+    }
+
+    .description-wrapper .right-side-wrapper {
+        width: 100%;
+    }
+
+    .content-wrapper p, li {
+        line-height: 1rem;
+        padding: 0.3rem;
+    }
+    
+
+    #estudios .grado, #experiencia .cargo {
+        font-size: 1rem;
+    }
+
+    .content-wrapper .fecha {
+        float: none;
+        font-size: 1rem;
+        margin-left: 26%;
+    }
+
+    .content-wrapper .logo {
+        width: 20%;
+        height: 20%;
+        margin-right: 1.2rem;
+    }
+
+    .content-wrapper video {
+        padding: 1rem;
+    }
+
+    .input-wrapper label {
+        float: none;
+        width: 100%;
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .input-wrapper input, textarea, select{
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .content-wrapper .button-wrapper {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    .button-wrapper input[type="submit"] {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    #counter p {
+        font-size: 0.8rem;
+    }
+
+    .confirmation-wrapper i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--black);
+    }
+
+    .confirmation-wrapper p {
+        font-size: 1.3rem;
+    }
+
+    .custom-select option {
+        font-size: 1rem;
+    }
+
+    address {
+        font-size: 0.8rem;
+    }
+
+    @keyframes menuResponsive {
+        0% { opacity: 0 }
+        25% {opacity: 0.25}
+        50% {opacity: 0.5}
+        100% { opacity: 1}
+    }
+
+}
+
+/*--------------tablets-----------*/
+
+@media only screen 
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px){
+    
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 3.5em;
+    }
+
+    body > header  p{
+        font-size: 2.5rem;
+    }
+
+    header p.title, nav {
+        display: none;
+    }
+
+    nav.navigator {
+        display: none;
+    }
+
+    nav.menu-icon {
+        visibility: visible;
+        display: block;
+        text-align: left;
+        position: fixed;
+        top: 0;
+        background-color: var(--gray);
+        width: 100%;
+        z-index: 1;
+    }
+
+    nav.menu-icon > a {
+        margin-left: 0.5rem;
+    }
+
+    nav.menu-icon a > i {
+        font-size: 4rem;
+        color: var(--black);
+        padding: 0.2rem;
+    }
+
+    nav#navigator-responsive.opened {
+        visibility: visible;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--black);
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0,0,0,.9);
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        animation: menuResponsive 0.2s;
+    }
+
+    nav#navigator-responsive.opened ul {
+        width: 100%;
+    }
+
+    nav#navigator-responsive.opened ul li{
+        display: block;
+        text-align: center;
+        padding: 3rem;
+    }
+
+    nav#navigator-responsive.opened ul li a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 3rem;
+        color: var(--gray);
+
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    section header {
+        margin-bottom: 1rem;
+    }
+
+    section li, p {
+        font-size: 2rem;
+    }       
+
+    #quien-soy .content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #quien-soy .content-wrapper > img {
+        margin-right: 0;
+    }
+
+    #quien-soy .content-wrapper article {
+        text-align: center;
+    }
+
+    #quien-soy .content-wrapper article p {
+        line-height: 2.5rem;
+    }
+
+    .content-wrapper {
+        width: 100%;
+    }
+
+    .description-wrapper .right-side-wrapper {
+        width: 100%;
+    }
+
+    .content-wrapper p, li {
+        line-height: 2.5rem;
+        padding: 0.5rem;
+    }
+    
+
+    #estudios .grado, #experiencia .cargo {
+        font-size: 2rem;
+    }
+
+    .content-wrapper .fecha {
+        float: none;
+        font-size: 2rem;
+        margin-left: 18%;
+    }
+
+    .content-wrapper .logo {
+        width: 15%;
+        height: 15%;
+        margin-right: 1.2rem;
+    }
+
+    .content-wrapper video {
+        padding: 1rem;
+    }
+
+    .content-wrapper i {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+
+    .input-wrapper label {
+        float: none;
+        width: 100%;
+        font-size: 2rem;
+        display: block;
+    }
+
+    .input-wrapper input, textarea, select{
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    .content-wrapper .button-wrapper {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    .button-wrapper input[type="submit"] {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    #counter p {
+        font-size: 1.5rem;
+    }
+
+    .confirmation-wrapper i {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        color: var(--black);
+    }
+
+    .confirmation-wrapper p {
+        font-size: 2.5rem;
+    }
+
+    .custom-select option {
+        font-size: 1rem;
+    }
+
+    address {
+        font-size: 1.5rem;
+    }
+
+    @keyframes menuResponsive {
+        0% { opacity: 0 }
+        25% {opacity: 0.25}
+        50% {opacity: 0.5}
+        100% { opacity: 1}
+    }
+
+}
+
+

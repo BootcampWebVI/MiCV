@@ -5,17 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Sabrina Fernández Zambrano">
-    <title>Mi CV</title>
+    <title>Sabrina's CV</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+    <script src="./js/index.js" type="module"></script>
 </head>
 <body>
     <!-- Portada: donde pondremos una imagen de foto con texto (deberá ocupar el viewport de la pantalla} -->
-    <header>
-        <h1>Curriculum Vitae</h1>
-        <p>Sabrina Fernández Zambrano</p>
+    <header id="home">
+        <h1>Sabrina Fernández Zambrano</h1>
+        <p>Desarrolladora Web Full-Stack</p>
         <nav class="navigator">
+            <p class="title">Mi CV</p>
+            <ul>
+                <li><a name="quien-soy" href="#quien-soy">¿Quién soy?</a></li>
+                <li><a name ="estudios" href="#estudios">Estudios</a></li>
+                <li><a name="experiencia" href="#experiencia">Experiencia</a></li>
+                <li><a name="sobre-mi" href="#sobre-mi">Sobre Mí</a></li>
+                <li><a name="contacto" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <nav class="menu-icon">
+            <a href="#navigator-responsive"><i class="fas fa-bars"></i></a>
+        </nav>
+        <nav id="navigator-responsive">
             <ul>
                 <li><a href="#quien-soy">¿Quién soy?</a></li>
                 <li><a href="#estudios">Estudios</a></li>
@@ -35,9 +51,20 @@
             </header>
             <div class="content-wrapper">
                 <img src="./assets/personal_pic.jpg" alt="personal_picture_sabrina_fernandez_zambrano">
-                <p>Nombre: Sabrina Fernández Zambrano</p>
-                <p>Residencia: Madrid, España</p>
-                <p>Fecha de Nacimiento: 03/09/1993</p>
+                <article>
+                    <p>Hola, soy Sabrina</p>
+                    <p>
+                        Sobre mí, soy graduada en Ingeniería Informática. 
+                        Durante la carrera, he trabajado con lenguajes de programación como
+                        Java, C y SQL
+                    </p>
+                    <p>
+                        También, he adquirido experiencia trabajando con lenguajes como HTML5, Javascript, CSS3 y con frameworks como AngularJS,
+                        React y React Native a través de prácticas y cursos debido a mi gran interés en el desarrollo de aplicaciones web y
+                        móviles.
+                    </p>
+                </article>
+                
             </div>
         </section>
 
@@ -46,22 +73,28 @@
             <header>
                 <h2>Estudios</h2>
             </header>
-            <section class="content-wrapper">
-                <div class="item">
-                    <p>2018 - Actualmente</p>
-                    <p>Master Full-Stack Desarrollo Web</p>
-                    <p>KeepCoding</p>
-                </div>
-                <div class="item">
-                    <p>2011-2018</p>
-                    <p>Grado en Ingenieria Informatica</p>
-                    <p>Universidad Politecnica de Madrid</p>
-                </div>
-                <div class="item">
-                    <p>2009 - 2011</p>
-                    <p>Titulo de Bachillerato</p>
-                    <p>IES Carmen Conde</p>
-                </div>
+            <div class="content-wrapper">
+                <article class="item">
+                    <p class="fecha">2018 - Actualmente</p>
+                    <div class="description-wrapper">
+                        <img src="./assets/kc_logo.png" alt="kc_logo" class="logo">
+                        <div class="right-side-wrapper">
+                            <p class="grado">Master Full-Stack Desarrollo Web</p>
+                            <p class="escuela">KeepCoding</p>
+                            <!--fecha en respo-->
+                        </div>
+                    </div>
+                </article>
+                <article class="item">
+                    <p class="fecha">09/2011 - 01/2018</p>
+                    <div class="description-wrapper">
+                        <img src="./assets/upm_logo.jpg" alt="upm_logo" class="logo">
+                        <div class="right-side-wrapper">
+                            <p class="grado">Grado en Ingenieria Informatica</p>
+                            <p class="escuela">Universidad Politecnica de Madrid</p>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -71,33 +104,41 @@
                 <h2>Experiencia</h2>
             </header>
             <div class="content-wrapper">
-                <div class="item">
-                    <p>01/2018 - Actualmente</p>
-                    <p>Desarrolladora Front-end</p>
-                    <p>Amaris</p>
-                    <div class="content-wrapper">
-                        <ul>
-                            <li>Responsable de nuevos desarrollos utilizando tecnologías como Backbone, Marionette, CSS, HTML, Jenkins,
-                                Javascript,
-                                jQuery, Dust, Stylus, Git, Java</li>
-                            <li>Testing</li>
-                        </ul>
+                <article class="item">
+                    <p class="fecha">01/2018 - Actualmente</p>
+                    <div class="description-wrapper">
+                        <img src="./assets/amaris_logo.jpg" class="logo" alt="amaris_logo">
+                            <div class="right-side-wrapper">
+                                <p class="cargo">Desarrolladora Front-end</p>
+                                <p class="empresa">Amaris</p>
+                                <ul class="tareas">
+                                    <li><i class="fas fa-check"></i> Responsable de nuevos desarrollos utilizando tecnologías como Backbone,
+                                        Marionette, CSS, HTML, Jenkins,
+                                        Javascript,
+                                        jQuery, Dust, Stylus, Git, Java</li>
+                                    <li><i class="fas fa-check"></i> Testing</li>
+                                </ul>
+                            </div>
                     </div>
-                </div>
-                <div class="item">
-                    <p>01/2017 - 11/2017</p>
-                    <p>Becaria en Desarrollo Front-end</p>
-                    <p>Bridge For Billions</p>
-                    <div class="content-wrapper">
-                        <ul>
-                            <li>Responsable de tareas de implementación de su aplicación web usando tecnologías como HTML5, CSS3, SASS,
-                                AngularJS,
-                                Javascript, Jade, Jquery, Coffeescript, Django, Python</li>
-                            <li>Mantenimiento de su aplicación</li>
-                            <li>Testing</li>
-                        </ul>
+                </article>
+                <article class="item">
+                    <p class="fecha">01/2017 - 11/2017</p>
+                    <div class="description-wrapper">
+                        <img src="./assets/bfb_logo.jpg" alt="bfb_logo" class="logo">
+                        <div class="right-side-wrapper">
+                            <p class="cargo">Becaria en Desarrollo Front-end</p>
+                            <p class="empresa">Bridge For Billions</p>
+                            <ul class="tareas">
+                                <li><i class="fas fa-check"></i> Responsable de tareas de implementación de su aplicación web usando tecnologías
+                                    como HTML5, CSS3, SASS,
+                                    AngularJS,
+                                    Javascript, Jade, Jquery, Coffeescript, Django, Python</li>
+                                <li><i class="fas fa-check"></i> Mantenimiento de su aplicación</li>
+                                <li><i class="fas fa-check"></i> Testing</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -105,15 +146,11 @@
         <section id="sobre-mi">
             <header>
                 <h2>Sobre Mí</h2>
-                <div class="item">
-                    <header>
-                        <h3>Intereses</h3>
-                    </header>
-                    <div class="content-wrapper">
-                        <video controls>
-                            <source src="./assets/interests.mp4" type="video/mp4"></source>
-                        </video>
-                    </div>
+                <div class="content-wrapper">
+                    <video controls>
+                        <source src="./assets/interests.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
                 </div>
             </header>
 
@@ -125,37 +162,61 @@
                 <h2>Contacto</h2>
             </header>
             <div class="content-wrapper">
-                <form action="">
+                <form action="" id="form">
                     <!-- - Un campo de nombre requerido. -->
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Insertar nombre" required>
-                
+                    <div class="input-wrapper">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Insertar nombre" required>
+                    </div>
                     <!-- - Un campo de email y validarlo correctamente. -->
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                
+                    <div class="input-wrapper">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Insertar correo electronico" required>
+                    </div>
+                    
                     <!-- - Un campo se selección ("como me has conocido"), que tenga varias opciones y una de ellas se "Otros"; -->
-                    <label for="conocer">¿Como me has conocido?</label>
-                    <select name="conocer" id="conocer">
-                        <option value="KeepCoding">KeepCoding</option>
-                        <option value="Linkedin">Linkedin</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="Otros">Otros</option>
-                        <!-- si seleccionamos esta opción nos debe aparecer un campo dinámicamente de tipo texto para rellenar libremente. -->
-                    </select>
+                    <div class="input-wrapper">
+                        <label for="conocer">¿Como me has conocido?</label>
+                        <select class="custom-select" name="conocer" id="conocer">
+                            <option class="option" value="" selected></option>
+                            <option class="option" value="KeepCoding">KeepCoding</option>
+                            <option class="option" value="Linkedin">Linkedin</option>
+                            <option class="option" value="Facebook">Facebook</option>
+                            <option class="option" value="Infojobs">Infojobs</option>
+                            <option class="option"class="option" value="Otros">Otros</option>
+                            <!-- si seleccionamos esta opción nos debe aparecer un campo dinámicamente de tipo texto para rellenar libremente. -->
+                        </select>
+                        <input type="text" name="otros" id="otros" placeholder="¿Donde me has conocido?">
+                    </div>                   
                     <!-- - Un número de contacto, validando que el número es correcto -->
-                    <label for="telf">Telefono</label>
-                    <input type="tel" name="telf" id="telf">
-                
+                    <div class="input-wrapper">
+                        <label for="telf">Telefono</label>
+                        <input type="tel" name="telf" id="telf" placeholder="Insertar telefono" pattern='[0-9]{9}' minlength="9" maxlength="12">
+                    </div>
+
                     <!-- - Un campo de textarea, con un máximo de 150 palabras (no caracteres). -->
-                    <textarea name="info" id="info" cols="30" rows="5"></textarea>
-                
+                    <div class="input-wrapper">
+                        <label for="info">Información adicional</label>
+                        <textarea name="info" id="info"></textarea>
+                        <span id="counter"><p>Te quedan 150 palabras</p></span>
+                    </div>
+
                     <!-- - Un botón de envío. -->
-                    <button type="submit">Enviar</button>
+                    <div class="button-wrapper">
+                        <input type="submit" value="submit" disabled></button>
+                    </div>
                 </form>
             </div>
-            
+            <div class="confirmation-wrapper">
+                <i class="far fa-check-circle"></i>
+                <p>Tu petición ha sido enviada correctamente!</p>
+            </div>
         </section>
     </main>
+    <footer>
+        <address>
+            Copyright © Sabrina Fernandez Zambrano
+        </address>
+    </footer>
 </body>
 </html>
