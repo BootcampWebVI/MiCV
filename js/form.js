@@ -44,10 +44,11 @@ export function validateName(e){
 
     if(name.value !== '' && e.target.validity.valid){
         nameValidate = true;
-        validateForm();
     } else {
-        validateName = false;
+        nameValidate = false;
     }
+
+    validateForm();
 }
 
 export function validateEmail(e){
@@ -55,10 +56,11 @@ export function validateEmail(e){
 
     if (email.value !== '' && e.target.validity.valid){
         emailValidate = true;
-        validateForm();
     } else {
-        validateEmail = false;
+        emailValidate = false;
     }
+
+    validateForm();
 }
 
 export function validateConocer(e){
@@ -83,10 +85,10 @@ export function validatePhone(e){
 
     if (phone.value !== '' && e.target.validity.valid){
         phoneValidate = true;
-        validateForm();
     } else{
         phoneValidate = false;
     }
+    validateForm();
 }
 
 export function validateTextarea(){
@@ -97,15 +99,16 @@ export function validateTextarea(){
         counterText.innerHTML = `<p>Te quedan ${150 - wordCounter} palabras</p>`;
         if (wordCounter <= 150) {
             textareaValidate = true;
-            validateForm();
+            
         } else {
             textareaValidate = false;
         }
     } else {
         wordCounter = 0;
         counterText.innerHTML = `<p>Te quedan 150 palabras</p>`;
-        validateForm();
     }
+
+    validateForm();
 }
 
 function validateOtros(){
