@@ -131,11 +131,15 @@ function activeButton(){
     submitButton.addEventListener('click', submitForm.bind(this));
 }
 
-function submitForm() {
+function submitForm(e) {
+    e.preventDefault();
     console.log('enviando formulario...');
     setTimeout(() => {
         console.log('formulario enviado!');
         form.style.display = 'none';
         confirmation.style.display = 'block';
-    }, 3000);
+        setTimeout(() => {
+            location.reload();
+        }, 3000)
+    }, 2000);
 }
